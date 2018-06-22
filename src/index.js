@@ -1,4 +1,5 @@
 import dva from 'dva';
+import { createLogger } from 'redux-logger';
 import './index.css';
 
 // 1. Initialize
@@ -12,7 +13,9 @@ const app = dva({
 });
 
 // 2. Plugins
-// app.use({});
+app.use({
+    onAction: createLogger()
+});
 
 // 3. Model
 // app.model(require('./models/example').default);
